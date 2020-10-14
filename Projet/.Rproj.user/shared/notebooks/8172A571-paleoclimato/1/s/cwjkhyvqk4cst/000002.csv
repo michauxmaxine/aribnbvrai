@@ -1,0 +1,2 @@
+"0","res.mfa <- MFA(paleo[1:700,-(42:43)],group=c(31,6,3,1), type=c(""s"",""s"",""s"",""n""),name.group=c(""pollen"",""climat"",""lieu"",""biome""),num.group.sup=3:4,graph=FALSE)"
+"0","plot(res.mfa,hab=41,lab.ind=FALSE,cex=0.8)"

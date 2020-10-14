@@ -1,0 +1,1 @@
+"0","lines(ozone$T12[ord],omega[ord],type=""l"",lwd=2)"

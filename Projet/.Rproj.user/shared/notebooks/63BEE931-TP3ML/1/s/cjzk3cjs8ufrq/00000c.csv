@@ -1,0 +1,2 @@
+"0",""
+"0","contour(grid.balance, grid.income,matrix(as.numeric(pred.qda.grid),ncol=length(grid.income)),nlevels=1,add=TRUE,drawlabels=FALSE,col=""blue"",lwd=1)"

@@ -1,0 +1,4 @@
+"0","my.data.1 <- simu.data(I=1,J=1,K=3,L=10, n.fixed=3,mu=0, alpha1=NULL, alpha2= NULL, sigma = 0,2, alpha3=c(1,1,-2))"
+"2","Error in simu.data(I = 1, J = 1, K = 3, L = 10, n.fixed = 3, mu = 0, alpha1 = NULL,  : 
+  impossible de trouver la fonction ""simu.data""
+"

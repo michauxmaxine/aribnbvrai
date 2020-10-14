@@ -1,0 +1,27 @@
+"0","```r
+segments = cvsegments(nrow(pig),10) 
+
+for (k in 1:10) {
+   trainx = x[-segments[[k]],]
+   trainy = y[-segments[[k]]]
+   testx = x[segments[[k]],]
+   cvmod = cv.glmnet(trainx,trainy,alpha=1,lambda=exp(loglambda))
+   mod = glmnet(trainx,trainy,alpha=1,lambda=exp(loglambda))
+   cvpred[segments[[k]],] = predict(mod,newx=testx)[,which.min(cvmod$cvm)] 
+   print(paste(\"Segment \",k,sep=\"\"))
+}
+```"
+"1","[1] \"Segment 1\"
+[1] \"Segment 2\"
+[1] \"Segment 3\"
+[1] \"Segment 4\"
+[1] \"Segment 5\"
+[1] \"Segment 6\"
+[1] \"Segment 7\"
+[1] \"Segment 8\"
+[1] \"Segment 9\"
+[1] \"Segment 10\"
+"
+"0","```r
+MSEP = mean((pig$LMP-cvpred)^2)
+```"

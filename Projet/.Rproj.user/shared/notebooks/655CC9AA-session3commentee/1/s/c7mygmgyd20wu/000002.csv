@@ -1,0 +1,4 @@
+"0","```r
+mod = glmnet(x,y,alpha=1,lambda=exp(loglambda)) 
+
+```"

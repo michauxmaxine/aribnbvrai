@@ -1,0 +1,2 @@
+"0","par(mfrow=c(2,4))"
+"0","plot(dta.gam,lwd=3,col=""blue"",cex.lab=1.25,se=TRUE)"

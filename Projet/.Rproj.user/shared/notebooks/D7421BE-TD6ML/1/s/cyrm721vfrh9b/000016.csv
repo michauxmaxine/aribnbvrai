@@ -1,0 +1,5 @@
+"0","rpart.plot(modele)
+"
+"2","Error in rpart.plot(modele) : 
+  impossible de trouver la fonction ""rpart.plot""
+"

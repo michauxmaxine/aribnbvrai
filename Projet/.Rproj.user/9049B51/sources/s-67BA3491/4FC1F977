@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1602544562645.000,
+    "dirty" : false,
+    "encoding" : "LATIN1",
+    "folds" : "",
+    "hash" : "968646354",
+    "id" : "4FC1F977",
+    "lastKnownWriteTime" : 1602689568,
+    "last_content_update" : 1602689568350,
+    "path" : "~/Documents/M2/Cours_Agro_J1_Programmation_R/archive/Projet/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "cursorPosition" : "99,19",
+        "scrollLine" : "83"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

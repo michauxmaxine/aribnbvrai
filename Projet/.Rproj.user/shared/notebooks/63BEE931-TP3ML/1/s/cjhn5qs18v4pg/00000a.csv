@@ -1,0 +1,1 @@
+"0","contour(grid.balance, grid.income,matrix(as.numeric(pred.lda.grid),ncol=length(grid.income)),nlevels=1,add=TRUE,drawlabels=FALSE,col=""black"",lwd=1)"

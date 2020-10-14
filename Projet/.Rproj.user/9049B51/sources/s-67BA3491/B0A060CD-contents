@@ -1,0 +1,108 @@
+library(shiny)
+library(leaflet)
+library(plotly)
+library(data.table)
+
+#choix des variables pour l'UI
+
+source("readdata.R")
+
+shinyUI(navbarPage(theme = "style.css",
+                    title = "Airbnb",
+                   fluid = TRUE, 
+                   collapsible = TRUE,
+                   
+                   #1
+                   tabPanel("Home", includeHTML("home.html")
+                   ),
+
+                   #2
+                   tabPanel("Vous Ãªtes propriÃ©taire",
+                                     checkboxGroupInput(
+                                       inputId = "arr",
+                                       label = "Arrondissement du bien",
+                                       choices = c("Bronx", "Brooklyn", "Manhattan", "Queens", "Staten.Island"),
+                                       selected =c( "Bronx"="Bronx"),
+                                       inline=TRUE
+                                     ),
+                                     ####---select quartier-----
+                                     selectInput(
+                                       "quartier",
+                                       "Quartier du bien",
+                                       paste(testdata$neighbourhood,"-",testdata$neighbourhood_group)
+                                     ),
+                                   ###----
+                                     numericInput(
+                                       inputId = "night",
+                                       "Nombre minimum de nuits",
+                                       0,
+                                       min = 0,
+                                       300,
+                                       1),
+                                     numericInput(
+                                     inputId = "appart",
+                                       "Autres appartements",
+                                       0,
+                                       min = 0,
+                                       300,
+                                       1
+                                     ),
+                                     radioButtons(
+                                       inputId = "room",
+                                       label = "Type de chambre",
+                                       choices = c("Entire.home.apt", "Private.room", "Shared.room"),
+                                       selected = NULL,
+                                       inline = 1
+                                     ),
+                                     actionButton(inputId = "run","Lancer mon estimation", icon("check")),
+                              
+                                     h3(textOutput("selected_var"))
+                              
+                              ),
+                              
+                          
+                  
+                   #3 Locataire
+                   
+                   tabPanel("Vous Ãªtes locataire",
+                            uiOutput(outputId = "intro"),
+                            fluidRow(
+                              column(width = 4,
+                                     selectInput(inputId = "quartier", 
+                                                 label = "SÃ©lectionnez le quartier",
+                                                 choices = testdata$neighbourhood_group,
+                                                 selected = "Bronx")
+                              ),
+                              column(width = 4,
+                                     selectInput(inputId = "logement", 
+                                                 label = "SÃ©lectionnez le type de logement",
+                                                 choices = testdata$room_type,
+                                                 selected = "private room")
+                              ),
+                              column(width = 4,
+                                     sliderInput(inputId = "price", 
+                                                 label = "SÃ©lectionnez le prix pour une nuit",
+                                                 min = min(testdata$price),
+                                                 max = max(testdata$price),
+                                                 value = mean(testdata$price)
+                                                 
+                                     ))
+                            ),
+                            h1("La carte ci dessous reprÃ©sente l'emplacement des airbnbs sÃ©lectionnÃ©s Ã  partir de vos criteres", style = "font-family: 'Bookman, URW '; font-size : 20pt; color: #FF3399 ; text-align: center"),
+                            #h5("Vous pouvez trouver lors du passage du curseur sur les points le nom de l'hote ainsi que le prix pour une nuit", style = "font-family: 'Bookman, URW '; font-size : 15pt; color: #FF3399 ; text-align: center"),
+                            leafletOutput("bbmap", height=1000)
+                   ),
+                   
+                   #4
+                   tabPanel("Nous",
+                            includeHTML("nous.html"),
+                            includeHTML("projet.html")
+                            
+                            )
+                  )
+)
+                   
+        
+
+
+

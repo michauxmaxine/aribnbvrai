@@ -1,0 +1,6 @@
+"0","```r
+cvmod = cv.glmnet(x,y,alpha=0,lambda=exp(loglambda))
+```"
+"1","Error in cv.glmnet(x, y, alpha = 0, lambda = exp(loglambda)) : 
+  objet 'loglambda' introuvable
+"

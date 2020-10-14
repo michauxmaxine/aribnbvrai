@@ -1,0 +1,6 @@
+"0","thresh.vec <- seq(0.01,0.8,by=0.02)"
+"0","acc.vec <- rep(NA,times=length(thresh.vec))"
+"0","spe.vec <- rep(NA,times=length(thresh.vec))"
+"0","sen.vec <- rep(NA,times=length(thresh.vec))"
+"0","pred.prob <- pred.logistic.test.2 <- predict(mod.logistic,newdata=data.test,type=""response"")"
+"0",""

@@ -1,0 +1,4 @@
+"0","## On pourrait enlever les effets inutiles d'interaction non significatifs (Ã  faire pas Ã  pas)"
+"0","mod.mucine.2 <- lm(mucines ~ veau+proteines+site+veau:site+proteines:site,data=mucine)"
+"0","mod.anova.2 <- Anova(mod.mucine.2,type=""III"") ## ne change pas d'une anova de type I"
+"0","#mod.anova.2 <- anova(mod.mucine.2) ## ne change pas d'une anova de type I"

@@ -1,0 +1,4 @@
+"0","grid.balance <- seq(min(Default$balance), max(Default$balance), length.out = 1000)"
+"0","grid.income <- seq(min(Default$income), max(Default$income), length.out = 1000)"
+"0","data.grid <- expand.grid(balance = grid.balance, income = grid.income)"
+"0","plot(data.grid,col=4,pch=20)"

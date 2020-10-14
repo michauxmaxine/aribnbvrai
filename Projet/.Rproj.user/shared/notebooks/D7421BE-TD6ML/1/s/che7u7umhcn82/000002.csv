@@ -1,0 +1,7 @@
+"0","require(mlbench)"
+"0","data(""LetterRecognition"")"
+"0","data.train<-LetterRecognition"
+"0","train = sample(1:nrow(LetterRecognition),1000)"
+"0","test = setdiff(1:nrow(LetterRecognition),train) "
+"0","data.train = LetterRecognition[train,]"
+"0","data.test = LetterRecognition[test,]"

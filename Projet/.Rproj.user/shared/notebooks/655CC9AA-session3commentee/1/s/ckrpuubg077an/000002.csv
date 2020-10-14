@@ -1,0 +1,4 @@
+"0","matplot(1:137,t(pig[,1:137]),type=""l"",lty=1,col=""orange"","
+"0","        main=""CT curves for muscle percentage"",xlab=""Anatomical location"","
+"0","        ylab=""Muscle %"")"
+"0",""

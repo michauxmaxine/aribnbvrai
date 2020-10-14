@@ -1,0 +1,1 @@
+{"frames":[{"character_number":0,"end_character_number":0,"end_line_number":0,"file":"","func":"confusionMatrix(pred.test.knn.20, reference = data.test$default, \n    mod = \"everything\")","line_number":0}],"message":"Error in confusionMatrix(pred.test.knn.20, reference = data.test$default,  : \n  objet 'pred.test.knn.20' introuvable\n"}

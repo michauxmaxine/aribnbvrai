@@ -1,0 +1,45 @@
+"0","path <- ""~/Documents/M2/données expérimentalesMAthieu/TD5"""
+"0","require(car)"
+"2","Le chargement a nécessité le package : car
+"
+"2","Le chargement a nécessité le package : carData
+"
+"2","Registered S3 methods overwritten by 'car':
+  method                          from
+  influence.merMod                lme4
+  cooks.distance.influence.merMod lme4
+  dfbeta.influence.merMod         lme4
+  dfbetas.influence.merMod        lme4
+"
+"2","
+Attachement du package : ‘car’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    recode
+
+"
+"0","require(lmerTest)"
+"0","require(GAD)"
+"2","Le chargement a nécessité le package : GAD
+"
+"2","le package ‘GAD’ a été compilé avec la version R 4.0.2"
+"2","Le chargement a nécessité le package : matrixStats
+"
+"2","le package ‘matrixStats’ a été compilé avec la version R 4.0.2"
+"2","
+Attachement du package : ‘matrixStats’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    count
+
+"
+"2","Le chargement a nécessité le package : R.methodsS3
+"
+"2","R.methodsS3 v1.8.0 (2020-02-14 07:10:20 UTC) successfully loaded. See ?R.methodsS3 for help.
+"
+"0","viande <- read.table(paste(path,""/viande.txt"",sep=""""),sep=""\t"",header=TRUE,dec="","",na.strings="""")"
+"0",""

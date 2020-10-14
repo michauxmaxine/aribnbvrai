@@ -1,0 +1,5 @@
+"0","knots = seq(5,35,length=7)"
+"0","basis = bs(ozone$T12,knots=knots[-c(1,length(knots))],degree=1,"
+"0","           intercept=TRUE)"
+"0","ord = order(ozone$T12)"
+"0",""

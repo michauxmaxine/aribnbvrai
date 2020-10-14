@@ -1,0 +1,4 @@
+"0","plot(1:137,alpha[,1],bty=""l"",type=""b"",pch=16,lwd=2,xlab=""Indices of explanatory variables"","
+"0","     ylab=""Loadings"",main=""Loadings of the best latent variable"",cex.lab=1.25,"
+"0","     cex.axis=1.25,cex.main=1.25)"
+"0",""

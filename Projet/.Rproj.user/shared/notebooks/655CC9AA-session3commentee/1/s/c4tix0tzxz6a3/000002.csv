@@ -1,0 +1,4 @@
+"0","```r
+loglambda = seq(10,-10,length=100) 
+
+```"

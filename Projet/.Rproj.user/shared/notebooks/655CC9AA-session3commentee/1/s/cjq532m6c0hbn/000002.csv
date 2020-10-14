@@ -1,0 +1,11 @@
+"0","```r
+beta = rep(0,137)      # Initialize an empty vector of regression coefficients 100 valeurs non nulles et 13è =0
+mod = glm(LMP~.,data=pig[,c(select$which[100,-1],TRUE),drop=FALSE])
+beta[select$which[100,-1]] = coef(mod)[-1]
+
+plot(1:137,beta,bty=\"l\",type=\"b\",pch=16,lwd=2,xlab=\"Indices of explanatory variables\",
+     ylab=\"Regression coefficients\",main=\"Regression coefficients\",cex.lab=1.25,
+     cex.axis=1.25,cex.main=1.25)
+mtext(\"Best model with 100 variables\",cex=1.25)
+
+```"

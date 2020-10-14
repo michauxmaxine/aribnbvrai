@@ -1,0 +1,4 @@
+"0","```r
+plot(coffee_nirs.cvlasso)
+
+```"

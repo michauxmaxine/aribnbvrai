@@ -1,0 +1,4 @@
+"0","mod = lm(LMP~LV,data=data.frame(LMP=y,LV=lv[,1]))
+"
+"2","Error in data.frame(LMP = y, LV = lv[, 1]) : objet 'y' introuvable
+"

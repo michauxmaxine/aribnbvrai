@@ -1,0 +1,2 @@
+"0","lmp.pls = plsr(LMP~.,data=pig,ncomp=100,scale=TRUE,validation=""CV"",segments=10)"
+"0",""

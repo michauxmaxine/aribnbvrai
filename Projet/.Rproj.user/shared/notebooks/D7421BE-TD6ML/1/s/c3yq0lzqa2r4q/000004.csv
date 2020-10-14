@@ -1,0 +1,5 @@
+"0","plot(mod_rpartn, type = 3, extra=101, fallen.leave = T)
+"
+"2","Error in plot(mod_rpartn, type = 3, extra = 101, fallen.leave = T) : 
+  objet 'mod_rpartn' introuvable
+"

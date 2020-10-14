@@ -1,0 +1,39 @@
+setwd("~/Documents/M2/Cours_Agro_J1_Programmation_R/archive/projet")
+testdata <- fread("./AB_NYC_2019.csv", header=T,stringsAsFactors = T)
+shinyUI(navbarPage(tabPanel("Vous etes proprietaire",
+         radioButtons(
+             inputId = "arr",
+             label = "Arrondissement du bien",
+             choices = c("Bronx", "Brooklyn", "Manhattan", "Queens", "Staten.Island"),
+             inline=TRUE
+         ),
+         ####---select quartier-----
+         uiOutput('quartier'),
+         ###----
+         numericInput(
+             inputId = "night",
+             "Nombre minimum de nuits",
+             1,
+             min = 1,
+             300,
+             1),
+         numericInput(
+             inputId = "appart",
+             "Avez-vous d'autres appartement sur ACObnb ?",
+             0,
+             min = 0,
+             300,
+             1
+         ),
+         radioButtons(
+             inputId = "room",
+             label = "Type de chambre",
+             choices = c("Entire.home.apt", "Private.room", "Shared.room"),
+             selected = NULL,
+             inline = 1
+         ),
+         actionButton(inputId = "run","Lancer mon estimation", icon("check")),
+         
+         h3(textOutput("selected_var"))
+         
+)))

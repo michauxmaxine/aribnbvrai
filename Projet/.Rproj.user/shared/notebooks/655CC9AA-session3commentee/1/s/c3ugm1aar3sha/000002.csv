@@ -1,0 +1,4 @@
+"0","```r
+cvmod = cv.glmnet(x,y,alpha=0,lambda=exp(loglambda))
+
+```"

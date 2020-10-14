@@ -1,0 +1,241 @@
+---
+title: "TD"
+output: html_document
+---
+
+##Boucles et fonctions
+1. Proposer une implÃ©mentation du calcul 5! (factorielle 5) en utilisant une boucle for
+
+```{r}
+res <- 1
+for (i in 2:5) {
+  res <- res * i
+}
+res
+```
+
+
+2. Proposer une implÃ©mentation du calcul 5! en utilisant une boucle while
+
+```{r}
+i <- 1
+res <- 1
+while (i <= 5) {
+  res <- res * i
+  i <- i + 1
+}
+res
+
+```
+
+3. Proposer une implÃ©mentation du calcul 5! en utilisant une boucle repeat
+
+```{r}
+x <- 1
+res <- 1
+repeat {
+  res <- res * x
+  x = x+1
+  if (x > 5 ){
+  break
+}
+}
+system.time(res)
+
+
+```
+
+4. Construire 3 fonctions, factFor, factWhile, factRepeat, prenant en argument un entier n, et renvoyant
+n!
+```{r}
+factFor <- function(n) {
+  res <- 1
+  for (i in 2:n) {
+  res <- res * i
+  }
+  res
+}
+factFor(5)  
+
+```
+```{r}
+factWhile <- function (n){
+  i <- 1
+  res <- 1
+  while (i <= n) {
+  res <- res * i
+  i <- i + 1
+}
+res
+}
+factWhile(6)
+
+```
+
+```{r}
+factRepeat <- function(n) {
+  x <- 1
+  res <- 1
+  repeat {
+  res <- res * x
+  x = x+1
+  if (x > n ){
+  break
+}
+}
+res
+}
+system.time(factRepeat(6))
+
+```
+
+5. VÃ©rifier que vos trois fonctions fonctionnent et renvoient le mÃªme rÃ©sultat. . . !
+
+6. Construire maintenant une fonction compareFact, permettant le calcul factorielle avec, au choix, les 3
+types de boucles et fonctions prÃ©cÃ©dentes :
+â¢ deux arguments : un entier n, et le type de la boucle type, avec la valeur par dÃ©faut "for"
+â¢ utiliser la fonction switch pour traiter le choix de la boucle (et donc fonction factFor, factWhile,
+factRepeat) Ã  prendre en compte pour le calcul
+â¢ contrÃ´ler lâargument n (type, valeur positive, . . . ) et renvoyer des erreurs / messages explicites le
+cas Ã©chÃ©ant
+â¢ contrÃ´ler lâargument type avec try et match.arg
+â¢ gÃ©rer le cas 0! = 1
+â¢ commenter votre fonction suivant la convention doxygen
+
+```{r}
+compareFact <- function (n, type = "for") {
+  controle_type <- try(match.arg(type, c("for", "while", "repeat")), silent = T)
+  if ("try-error" %in% class(controle_type)) {
+    print("la fonction demandÃ©e n'existe pas (for/while/repeat)")
+    warning("la fonction par dÃ©faut est for \n")
+    type <- "for"
+  }
+  if ( n == round(n) & n >= 0  ) { 
+    cat ("le resultat de", n, "factorielle est \n")
+  }
+  else {
+    stop( " merci de mettre un entier positif")
+  }
+  if (n == 0) {
+    res_func = 1
+  }
+  res_func <- switch(type,
+    "for" = factFor (n),
+    "while" = factWhile(n),
+    "repeat" = factRepeat(n),
+    )
+  res_func
+}
+
+
+compareFact(5,'while')
+
+
+```
+
+7. Valider en testant les appels suivants :
+```{r}
+system.time(compareFact(5))
+system.time(compareFact(5, type = "while"))
+system.time(compareFact(5, type = "repeat"))
+compareFact(5, type = "frf")
+compareFact(0)
+compareFact(-1)
+compareFact("a")
+```
+
+A lâaide du package microbenchmark, comparer les temps de calculs de 100000! par type de boucle.
+Que pouvons-nous conclure dans ce cas ?
+
+```{r}
+require(microbenchmark)
+?microbenchmark
+microbenchmark(compareFact(1000, type = "while"),
+               compareFact(1000, type = "for"),
+               compareFact(1000, type = "repeat"),
+               times = 50)
+```
+##Apply family
+Rappelons-nous quâen R, un data.frame est en fait une list. . .
+donnÃ©es disponibles ici :
+```{r}
+# https://raw.githubusercontent.com/wiki/arunsrinivasan/flights/NYCflights14/flights14.csv
+data <- read.table("./flights14.csv", sep = ",", header = TRUE)
+```
+
+1. En utilisant un sapply, et la fonction class, rÃ©cupÃ©rer le type de chaque colonne dans une variable 1
+```{r}
+type_col <- sapply(data, FUN = class)
+type_col[1] 
+```
+
+2. Avec un apply, calculer la moyenne des colonnes numÃ©riques
+```{r}
+data$arr_time[1:10] <- NA
+
+col_nul_ind <- type_col %in% c("integer", "numeric")
+col_nul_ind <- which(col_nul_ind) # col integer
+
+col_num_name <- colnames(data)[type_col %in% c("integer", "numeric")]
+
+moy <- apply(data[col_nul_ind], 2, FUN = mean)
+```
+
+3. Re-calculer les moyennes en gÃ©rant les donnÃ©es manquantes
+```{r}
+apply(data[col_nul_ind], 2, FUN = mean, na.rm = T)
+
+
+```
+
+4. Avec un apply et un seul, calculer et retourner le minimun et le maximum des colonnes numÃ©riques
+(indice : crÃ©Ã©r dâabord une petite fonction)
+```{r}
+minmax <- function(x, na.rm = T) {
+  c(min(x, na.rm = T), max(x, na.rm = T ))
+}
+apply(data[,col_nul_ind], 2, FUN = minmax, na.rm = T)
+
+```
+
+5. Faire la mÃªme chose, mais avec un sapply
+```{r}
+sapply(data[, col_nul_ind], minmax)
+```
+
+6. CrÃ©er une nouvelle colonne itinerary, concatÃ©nation des colonnes origin et dest (paste)
+```{r}
+data$itinerary <- paste(data$origin, data$dest, sep = "-")
+```
+
+7. Calculer le coefficient de variation (ecart-type / moyenne) du temps de vol air_time par itinÃ©raire.
+(Utiliser un tapply et un aggregate et comparer le temps dâÃ©xÃ©cution). Quel itinÃ©raire a le plus grand
+coefficient de variation ?
+```{r}
+coef_var <- function (){
+  
+}
+tapply(data$air_time, INDEX = list(data$itinerary), FUN = "mean")
+
+get_cv <- function(x, na.rm = T){
+  sd(x, na.rm = na.rm)/ mean(x, na.rm = na.rm)
+}
+cv <- tapply(data$air_time, INDEX = list(data$itinerary), FUN = get_cv)
+names(cv)[which.max(cv)]
+```
+
+8. Calculer la vitesse moyenne de lâensemble des vols (vitesse = distance / air_time) des trois faÃ§ons
+suivantes, et comparer les temps de calculs (system.time)
+â¢ en utilisant une boucle for
+â¢ en utilisant les propiÃ©tÃ©s de la vectorisation
+â¢ en utilisant la fonction mapply
+```{r}
+system.time( v1 <- mean(data$distance / data$air_time) )
+system.time(v2 <- mean(dat)
+            
+            
+```
+
+
+
+```{r}

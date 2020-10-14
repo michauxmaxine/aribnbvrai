@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1602544561196.000,
+    "dirty" : false,
+    "encoding" : "LATIN1",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DB966443",
+    "lastKnownWriteTime" : 1602689720,
+    "last_content_update" : 1602689720335,
+    "path" : "~/Documents/M2/Cours_Agro_J1_Programmation_R/archive/Projet/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "cursorPosition" : "5,29",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

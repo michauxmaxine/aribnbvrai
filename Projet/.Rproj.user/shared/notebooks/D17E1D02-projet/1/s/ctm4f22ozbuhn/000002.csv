@@ -1,0 +1,41 @@
+"0","library(plotly)"
+"2","le package ‘plotly’ a été compilé avec la version R 4.0.2"
+"2","Le chargement a nécessité le package : ggplot2
+"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","
+Attachement du package : ‘plotly’
+
+"
+"2","The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    filter
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    layout
+
+"
+"0","#install.packages(""leaflet"")"
+"0","library(leaflet)"
+"0","#install.packages(""googleway"")"
+"0","library(googleway)"
+"2","le package ‘googleway’ a été compilé avec la version R 4.0.2"
+"2","
+Attachement du package : ‘googleway’
+
+"
+"2","The following objects are masked from ‘package:plotly’:
+
+    add_heatmap, add_markers, add_polygons
+
+"

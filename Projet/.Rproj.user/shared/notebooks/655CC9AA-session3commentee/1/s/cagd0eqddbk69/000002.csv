@@ -1,0 +1,5 @@
+"0","image.plot(1:137,1:137,xcor[,137:1],xlab=""Indices of explanatory variables"","
+"0","           ylab=""Indices of explanatory variables"","
+"0","           main=""Image plot of the correlations across explanatory variables"","
+"0","           yaxt=""n"",cex.lab=1.25,cex.axis=1.25,cex.main=1.25)"
+"0",""

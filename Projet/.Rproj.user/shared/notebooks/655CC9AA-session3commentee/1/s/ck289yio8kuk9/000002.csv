@@ -1,0 +1,4 @@
+"0","beta = rep(0,137)       # Initialize an empty vector of regression coefficients"
+"0","mod = (LMP~.,data=pig[,c(select$which[5,-1],TRUE),drop=FALSE])"
+"2","Erreur : ',' inattendu(e) in ""mod = (LMP~.,""
+"

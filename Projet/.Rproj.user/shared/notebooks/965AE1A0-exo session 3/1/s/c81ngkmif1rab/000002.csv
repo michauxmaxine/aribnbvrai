@@ -1,0 +1,19 @@
+"0","```r
+pred <- ifelse(proba >= 0.5, \"Positif\", \"NÃ©gatif\") #regle de Bayes
+table(datatest$Type, pred)
+```"
+"1","            pred
+             NÃ©gatif Positif
+  N\xe9gatif     1188     767
+  Positif           7    1522
+"
+"0","```r
+message(\"L'accuracy est donc de : \")
+```"
+"1","L'accuracy est donc de : 
+"
+"0","```r
+mean(datatest$Type == pred) #accuracy
+```"
+"1","[1] 0.4368542
+"

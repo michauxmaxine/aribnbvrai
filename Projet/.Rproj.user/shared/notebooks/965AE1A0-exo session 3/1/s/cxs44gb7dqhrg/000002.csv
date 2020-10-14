@@ -1,0 +1,7 @@
+"0","```r
+mod <- glm(Type~.,data=datatrain, family=binomial) #ajustement du modele
+
+```"
+"1","Error in eval(family$initialize) : 
+  les valeurs de y doivent être 0 <= y <= 1
+"

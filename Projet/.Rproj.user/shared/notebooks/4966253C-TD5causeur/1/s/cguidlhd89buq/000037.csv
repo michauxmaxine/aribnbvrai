@@ -1,0 +1,2 @@
+"0","basis <-bs(wn,df =30, degree = 3) # travaille toujours avec splime cubique, degree=3)"
+"0","matplot(wn, basis, type = ""l"")"

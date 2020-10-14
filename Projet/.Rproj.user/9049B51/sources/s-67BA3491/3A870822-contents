@@ -1,0 +1,37 @@
+library(shiny)
+library(dplyr)
+library(leaflet)
+library(DT)
+library(shinyWidgets)
+library(dplyr)
+library(ggplot2)
+library(shiny)
+library(leaflet)
+library(plotly)
+library(data.table)
+library(dplyr)
+library(ggplot2)
+
+
+shinyServer(function(input, output, session) {
+    # output$plot <- renderPlotly({
+    #     fig <- testdata 
+    #     fig <- fig %>%
+    #         plot_ly(
+    #             type = 'densitymapbox',
+    #             lat = ~Latitude,
+    #             lon = ~Longitude,
+    #             coloraxis = 'coloraxis',
+    #             radius = 10) 
+    #     fig
+    #         })
+    # 
+    # 
+    
+    output$plot <- renderPlotly({
+        p <- ggplot(testdata,aes(y=testdata$price, x=testdata$neighbourhood_group, fill=testdata$room_type)) +
+            geom_violin(colour=NA) +
+            coord_flip()
+        ggplotly(p)  
+        })
+})

@@ -1,0 +1,6 @@
+"0","```r
+datatest$Type <- as.factor(datatest$Type)
+
+```"
+"1","Error in is.factor(x) : objet 'datatest' introuvable
+"

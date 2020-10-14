@@ -1,0 +1,4 @@
+"0","contrasts(viande$Fournisseur)<-contr.sum(n=nlevels(viande$Fournisseur))"
+"2","Error in contr.sum(n = nlevels(viande$Fournisseur)) : 
+  nombre de degrés de liberté insuffisant pour définir des contrastes
+"

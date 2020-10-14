@@ -1,0 +1,5 @@
+"0","wn = seq(400,2500,1)           # Wavenumbers"
+"0","matplot(wn,t(snv_x),type=""l"",lwd=2,col=""orange"",lty=1,"
+"0","        bty=""l"",xlab=expression(Wave~numbers~(nm^-1)),"
+"0","        ylab=""SNV-transformed NIRS"",main=""spectres proche-infra rouges de la concentration en carbone"","
+"0","        cex.main=1.25,cex.lab=1.25,cex.axis=1.25)"

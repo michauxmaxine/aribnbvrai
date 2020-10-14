@@ -1,0 +1,86 @@
+library(shiny)
+
+library(dplyr)
+
+library(leaflet)
+
+library(DT)
+
+library(data.table)
+
+library("RColorBrewer")
+
+library(shinyWidgets)
+
+library(glmnet)
+
+library(caret)
+
+
+shinyServer(function(input, output, session) {
+ 
+                    observeEvent(input$run, {
+                    
+                    x_test1[,c(paste("room_type.",input$room,sep=""))] <- 1
+                    x_test1[,c(paste("neighbourhood.",input$quartier,sep=""))] <- 1
+                    x_test1[,c(paste("neighbourhood_group.",input$arr,sep=""))] <- 1
+                    x_test1[,c("minimum_nights")] <- input$night
+                    x_test1[,c("calculated_host_listings_count")] <- input$appart
+                    
+                    cvpredictions = round(predict(rbnb_lasso,newx=x_test1)[,which.min(rbnb_cvlasso$cvm)],2)
+                    
+                    output$selected_var <- renderText({ 
+                        paste("Votre bien est estime a",cvpredictions,"dollars par nuit.")
+                    })
+                    
+                })
+    
+    
+            
+    # CARTE 
+            #Sélection
+            
+            #MAP
+            output$bbmap <- renderLeaflet({
+                leaflet(testdata[1:100]) %>% 
+                    addCircles(lng = ~longitude, lat = ~latitude) %>% 
+                    addTiles() %>%
+                    addCircleMarkers(data = testdata, lat =  ~latitude, lng =~longitude, 
+                                     radius = 3,
+                                     color = ~pal(neighbourhood_group),
+                                     stroke = FALSE, fillOpacity = 0.8)%>%
+                    addLegend(pal=pal, values=input$var,opacity=1, na.label = "Not Available")%>%
+                    addEasyButton(easyButton(
+                        icon="fa-crosshairs", title="ME",
+                        onClick=JS("function(btn, map){ map.locate({setView: true}); }")))
+            })
+
+       
+         output$selected_varneigh <- renderText({ 
+            paste("You have selected", input$names_x_test)
+        })
+            
+            x_test1 <- matrix(data=0,ncol=231)
+            colnames(x_test1) <-  names_x_test
+            
+            observeEvent(input$run, {
+                
+                x_test1[,c(paste("room_type.",input$room,sep=""))] <- 1
+                x_test1[,c(paste("neighbourhood.",input$quartier,sep=""))] <- 1
+                x_test1[,c(paste("neighbourhood_group.",input$arr,sep=""))] <- 1
+                x_test1[,c("minimum_nights")] <- input$night
+                x_test1[,c("calculated_host_listings_count")] <- input$appart
+                
+                cvpredictions = round(predict(rbnb_lasso,newx=x_test1)[,which.min(rbnb_cvlasso$cvm)],2)
+                
+                output$selected_var_bien <- renderText({ 
+                    paste("Votre bien est estime a",cvpredictions,"dollars par nuit.")
+                })
+                
+            })
+            
+            
+        })
+        
+
+

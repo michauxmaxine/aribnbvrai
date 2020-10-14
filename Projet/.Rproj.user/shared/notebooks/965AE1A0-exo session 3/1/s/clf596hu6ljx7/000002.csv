@@ -1,0 +1,7 @@
+"0","```r
+proba<- predict(mod, newdata=datatest, type=\"response\") 
+head(proba) #donne les 6 premieres lignes
+```"
+"1","   29_M_1    29_M_2    29_M_3    29_M_4    29_M_5    29_M_6 
+0.9594316 0.6444162 0.4179002 0.8261380 0.9634853 0.5546651 
+"

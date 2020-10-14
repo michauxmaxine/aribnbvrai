@@ -1,0 +1,8 @@
+"0","```r
+mod = glmnet(x,y,alpha=1,lambda=exp(loglambda))
+plot(1:137,mod$beta[,which.min(cvmod$cvm)],pch=16,bty=\"n\",xlab=\"Indices of explanatory variables\",
+     ylab=expression(hat(beta)),main=\"Estimated regression coefficients using LASSO\",
+     cex.lab=1.25,cex.axis=1.25,cex.main=1.25)
+mtext(expression(Optimal~lambda),cex=1.25)
+
+```"

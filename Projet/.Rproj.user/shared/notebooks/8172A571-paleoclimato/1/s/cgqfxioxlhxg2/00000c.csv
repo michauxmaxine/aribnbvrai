@@ -1,0 +1,5 @@
+"0","library(FactoMineR)"
+"0","selection <- paleo[,which(sapply(paleo[701:828,1:31],sd)!=0)]"
+"0","rownames(selection)[701:828]=1:128"
+"0","res.pca <- PCA(selection,graph=FALSE,ind.sup=1:700)"
+"0","plot(res.pca,cex=0.7,autoLab=""y"",invisible=""ind.sup"")"

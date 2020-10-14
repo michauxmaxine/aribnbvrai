@@ -1,0 +1,4 @@
+"0","```r
+pred = cvpred[,which.min(cvmod$cvm)]
+
+```"

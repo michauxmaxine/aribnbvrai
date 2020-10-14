@@ -1,0 +1,9 @@
+setwd("~/Documents/M2/Cours_Agro_J1_Programmation_R/archive/projet")
+testdata <- fread("./AB_NYC_2019.csv", header=T,stringsAsFactors = T)
+
+# Define UI for application that draws a histogram
+shinyUI(navbarPage(
+    plotOutput("plot")
+           )
+           
+  )

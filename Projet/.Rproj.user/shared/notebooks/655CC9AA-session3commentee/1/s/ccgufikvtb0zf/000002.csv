@@ -1,0 +1,6 @@
+"0","corxy = cor(pig[,1:137],pig[,138])"
+"0","plot(1:137,corxy,type=""l"",col=""orange"","
+"0","        main=""Correlation between CT curves for muscle percentage and LMP"","
+"0","        xlab=""Anatomical location"","
+"0","        ylab=""Correlation"")"
+"0",""

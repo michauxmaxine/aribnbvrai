@@ -1,0 +1,6 @@
+"0","don <- paleo[1:700,1:31]"
+"0","aux <- don[,which(sapply(paleo[701:828,1:31],sd)!=0)]"
+"0","aux <- sweep(aux,1,rowSums(aux),FUN=""/"")"
+"0","don <- cbind.data.frame(aux,paleo[1:700,32:41])"
+"0","res.mfa <- MFA(don,group=c(ncol(aux),6,3,1), type=c(""s"",""s"",""s"",""n""),num.group.sup=3:4,graph=FALSE)"
+"0","plot(res.mfa, habillage=33, lab.ind=FALSE,cex=0.8)"

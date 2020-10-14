@@ -1,0 +1,3 @@
+"0","pred.lda.grid <- predict(mod.lda,newdata=data.grid)$class"
+"0","plot(data.grid,col=as.numeric(pred.lda.grid)+1)"
+"0",""

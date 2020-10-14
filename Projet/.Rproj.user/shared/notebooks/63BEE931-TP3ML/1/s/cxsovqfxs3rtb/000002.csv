@@ -1,0 +1,18 @@
+"0",""
+"0","library(caret)"
+"2","le package ‘caret’ a été compilé avec la version R 4.0.2"
+"2","Le chargement a nécessité le package : lattice
+"
+"2","
+Attachement du package : ‘caret’
+
+"
+"2","The following object is masked from ‘package:pls’:
+
+    R2
+
+"
+"0","cM.knn20 <- confusionMatrix(pred.test.knn.20,reference=data.test$default,mod=""everything"")"
+"2","Error in confusionMatrix(pred.test.knn.20, reference = data.test$default,  : 
+  objet 'pred.test.knn.20' introuvable
+"

@@ -1,0 +1,6 @@
+"0","```r
+plot(vlambda,beta,type=\"l\",lwd=2,bty=\"n\",xlab=expression(lambda),
+     ylab=expression(hat(beta)),main=\"Estimated regression coefficient using LASSO\",
+     cex.lab=1.25,cex.axis=1.25,cex.main=1.25,col=\"darkgray\")
+
+```"

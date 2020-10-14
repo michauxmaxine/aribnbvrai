@@ -1,0 +1,3 @@
+"0","optimal<- coords(roc.logistic, x=""best"", best.method = ""closest.topleft"")
+"
+"2","The 'transpose' argument to FALSE by default since pROC 1.16. Set transpose = TRUE explicitly to revert to the previous behavior, or transpose = TRUE to silence this warning. Type help(coords_transpose) for additional information."

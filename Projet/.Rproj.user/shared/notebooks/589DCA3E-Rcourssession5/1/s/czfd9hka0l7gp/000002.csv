@@ -1,0 +1,5 @@
+"0","plot(maxO3~T12,data=ozone,bty=""l"",type=""p"",pch=16,xlab=""Temperature at 12h"","
+"0","     ylab=""Maximal ozone concentration"","
+"0","     main=""Maximal ozone concentration along the temperature at 12h"",cex.lab=1.25,"
+"0","     cex.axis=1.25,cex.main=1.25)"
+"0",""

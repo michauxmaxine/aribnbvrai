@@ -1,0 +1,1 @@
+"0","plot(c(min(Default$balance), max(Default$balance)),c(min(Default$income), max(Default$income)),col=0,xlab=""balance"",ylab=""income"")"

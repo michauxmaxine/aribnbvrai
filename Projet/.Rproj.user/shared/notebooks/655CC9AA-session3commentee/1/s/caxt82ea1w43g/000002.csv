@@ -1,0 +1,5 @@
+"0","```r
+plot(cvmod,ylim=c(1,5))
+abline(h=MSEP,col=\"orange\",lwd=2)
+
+```"

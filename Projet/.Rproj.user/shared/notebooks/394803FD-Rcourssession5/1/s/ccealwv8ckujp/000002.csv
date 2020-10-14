@@ -1,0 +1,5 @@
+"0","matplot(ozone$T12[ord],basis[ord,],bty=""l"",type=""l"",lwd=2,lty=1,"
+"0","        xlab=""Temperature at 12h"","
+"0","        ylab=""B-spline basis"",main=""Cubic B-spline basis"",cex.lab=1.25,"
+"0","        cex.axis=1.25,cex.main=1.25)"
+"0",""

@@ -1,0 +1,6 @@
+"0","knots = seq(5,35,length=20)"
+"0","basis = bs(ozone$T12,knots=knots[-c(1,length(knots))],intercept=TRUE)"
+"0","t12.spline = lm(maxO3~-1+.,data=data.frame(maxO3=ozone$maxO3,basis))"
+"0","basis = bs(seq.t12,knots=knots[-c(1,length(knots))],intercept=TRUE)"
+"0","fit = predict(t12.spline,newdata=data.frame(basis))"
+"0",""

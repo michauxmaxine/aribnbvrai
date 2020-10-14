@@ -1,0 +1,46 @@
+library(shiny)
+library(leaflet)
+library(plotly)
+library(data.table)
+library(dplyr)
+library(ggplot2)
+
+# Define UI for application that draws a histogram
+shinyUI(navbarPage(
+
+    # Application title
+            tabPanel("Vous Ãªtes locataire",
+                     uiOutput(outputId = "intro"),
+                     fluidRow(
+                         column(width = 4,
+                                selectizeInput(inputId = "quartier",
+                                               label = "Selectionnez le quartier",
+                                               choices = testdata$neighbourhood_group)
+                         ),
+                         column(width = 4,
+                                selectizeInput(inputId = "logement",
+                                               label = "Selectionnez le type de logement",
+                                               choices = testdata$room_type)
+                         ),
+                         column(width = 4,
+                                sliderInput(inputId = "price",
+                                            label = "Selectionnez le prix desire pour une nuit entre : ",
+                                            min(testdata$price),
+                                            max(testdata$price),
+                                            value = c(min, max),
+                                            step = 10
+                                )
+                         ),
+                     ),   
+                    h1("La carte ci dessous represente l'emplacement des airbnbs selectionnes a partir de vos criteres", style = "font-family: 'Bookman, URW '; font-size : 20pt; color: #FF3399 ; text-align: center"),
+                    fluidRow(
+                      column(width = 6,
+                             leafletOutput("map", height = 1000)
+                      ),
+                      column(width = 6,
+                             plotOutput("plot"))
+                    )
+                     
+            )
+    )
+)

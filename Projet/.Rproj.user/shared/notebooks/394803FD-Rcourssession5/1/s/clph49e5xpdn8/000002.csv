@@ -1,0 +1,13 @@
+"0","lim.inf = min(ozone$T12[Nx0])
+lim.inf                                # Smallest T12 value in the k-neighborhood of T12=28
+"
+"1","[1]"
+"1"," 23.3"
+"1","
+"
+"0","lim.sup = max(ozone$T12[Nx0])"
+"0","lim.sup                                # Largest T12 value in the k-neighborhood of T12=28"
+"1","[1]"
+"1"," 32.7"
+"1","
+"

@@ -1,0 +1,2 @@
+"0","basis = bs(ozone$T12,knots=knots[-c(1,length(knots))],intercept=TRUE)"
+"0",""

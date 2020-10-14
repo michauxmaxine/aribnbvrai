@@ -1,0 +1,21 @@
+"0","```r
+
+x = pig$X92
+y = pig$LMP
+
+n = nrow(pig) ; n
+```"
+"1","[1] 117
+"
+"0","```r
+sxy = cov(x,y) ; sxy
+```"
+"1","[1] 0.390002
+"
+"0","```r
+s2x = var(x) 
+
+vlambda = seq(0,150,length=1000)
+beta = (sxy-vlambda/(2*n))/s2x 
+beta[sxy<=vlambda/(2*n)] = 0
+```"

@@ -1,0 +1,54 @@
+library(shiny)
+library(dplyr)
+library(leaflet)
+library(DT)
+library(shinyWidgets)
+library(dplyr)
+library(ggplot2)
+
+
+shinyServer(function(input, output, session) {
+    
+    output$intro <- renderText({
+        paste("Vous etes a la recherche d'un logement a New-York ?")
+    })
+    
+    filtered_data <- reactive({
+        quartier = input$quartier
+        logement = input$logement
+        price_min = input$price[1]
+        price_max = input$price[2]
+        testdata %>%
+            select(neighbourhood_group,room_type,longitude,latitude,price) %>%
+            filter(neighbourhood_group == quartier & room_type == logement & price >= price_min & price <= price_max)
+    })
+    
+    pal <- colorFactor("viridis", testdata$room_type)
+    
+    output$map <- renderLeaflet({
+        leaflet(testdata)%>% 
+            setView(lng = -73.9059, lat = 40.7128, zoom = 10) %>% 
+            addTiles() %>% 
+            addCircleMarkers(lng = filtered_data()$longitude, 
+                             lat = filtered_data()$latitude,
+                             radius = 3,
+                             color = ~pal(filtered_data()$room_type),
+                             popup = ~testdata$name,
+                             stroke = FALSE, fillOpacity = 0.8) %>%
+            addLegend(position = "topright",
+                      pal=pal, 
+                      values=testdata$room_type,
+                      opacity=1,
+                      title = "Type de logement",
+                      group = "circles")
+    })
+    
+    filtered_dataPlot <- testdata %>%
+        select(neighbourhood_group, room_type, price)
+    
+    output$plot <- renderPlot({
+        ggplot(filtered_dataPlot %>% filter(neighbourhood_group == input$quartier),aes(x = price,fill = room_type)) + geom_density() +  coord_cartesian(xlim = c(-0, 500)) + labs(title = "Distribution des prix par type de logement")
+    })
+    
+    
+})

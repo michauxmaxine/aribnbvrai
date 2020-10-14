@@ -1,0 +1,1 @@
+{"frames":[],"message":"Error in simu.data(I = 1, J = 1, K = 3, L = 10, n.fixed = 3, mu = 0, alpha1 = NULL,  : \n  impossible de trouver la fonction \"simu.data\"\n"}

@@ -1,0 +1,3 @@
+"0","plot(ozone$T12[ord],omega[ord],bty=""l"",type=""n"",lwd=2,xlab=""Temperature at 12h"","
+"0","     ylab=""Weights"",main=""Weights for local polynomial approximation at T12=28"","
+"0","     cex.lab=1.25,cex.axis=1.25,cex.main=1.25)"

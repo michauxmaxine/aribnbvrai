@@ -1,0 +1,3 @@
+"0","library(FactoMineR)"
+"0","res.pca <- PCA(paleo,ind.sup=701:828, quanti.sup=c(32:40,42), quali.sup=c(41,43))"
+"2","Missing values are imputed by the mean of the variable: you should use the imputePCA function of the missMDA package"

@@ -1,0 +1,7 @@
+"0","n <- nrow(Default)"
+"0","n.train <- n/4"
+"0","n.test <- n-n.train"
+"0","ind.train <- sample(1:nrow(Default),n.train)"
+"0","data.train <- Default[ind.train,]"
+"0","data.test <- Default[-ind.train,]"
+"0",""

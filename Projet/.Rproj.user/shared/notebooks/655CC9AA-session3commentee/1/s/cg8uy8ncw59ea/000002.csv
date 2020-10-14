@@ -1,0 +1,10 @@
+"0","```r
+plot(pig$LMP,cvpred[,1],pch=16,bty=\"n\",xlab=\"Observed LMP\",
+     ylab=\"Predicted LMP\",main=\"Fitted versus observed LMP\",
+     cex.lab=1.25,cex.axis=1.25,cex.main=1.25,ylim=range(pig$LMP))
+mtext(expression(Large~lambda),cex=1.25)
+```"
+"0","```r
+abline(0,1,lwd=2,col=\"darkgray\")
+
+```"

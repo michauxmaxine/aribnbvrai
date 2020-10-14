@@ -1,0 +1,7 @@
+"0","```r
+loglambda = seq(-10,-1,length=100)
+
+coffee_nirs.cvlasso = cv.glmnet(snv_x,y,family=\"multinomial\",type.measure=\"deviance\",
+                                lambda=exp(loglambda))
+
+```"

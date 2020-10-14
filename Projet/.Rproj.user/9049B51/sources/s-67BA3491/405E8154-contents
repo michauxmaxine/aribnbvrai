@@ -1,0 +1,20 @@
+library(plotly)
+setwd("~/Documents/M2/Cours_Agro_J1_Programmation_R/archive/projet")
+testdata <- fread("./AB_NYC_2019.csv", header=T,stringsAsFactors = T)
+
+ggplotly(ggplot(testdata,aes(x = testdata$price,y = testdata$neighbourhood_group,fill = testdata$room_type)) + geom_density() +  coord_cartesian(xlim = c(-0, 500)) + labs(title = "Distribution des prix par type de logement"))         
+
+p <- ggplot(testdata,aes(y=testdata$price, x=testdata$neighbourhood_group, fill=testdata$room_type)) +
+  geom_violin(colour=NA) +
+  coord_flip()
+
+ggplotly(p)         
+
+
+p <- ggplot(testdata, aes(x=testdata$price, fill = testdata$room_type)) + 
+  geom_density() + 
+  ggtitle("stacked density chart")
+
+  fig <- ggplotly(p)
+
+fig

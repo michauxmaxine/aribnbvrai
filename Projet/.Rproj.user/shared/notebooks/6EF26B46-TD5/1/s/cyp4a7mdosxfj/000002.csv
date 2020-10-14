@@ -1,0 +1,4 @@
+"0","Fo <- as.fixed(viande$Fournisseur)"
+"0","Co <- as.random(viande$Consommateur)"
+"0","Se <- as.random(viande$Seance)"
+"0",""

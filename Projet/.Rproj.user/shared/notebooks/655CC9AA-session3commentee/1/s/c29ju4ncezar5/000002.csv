@@ -1,0 +1,10 @@
+"0","```r
+segments = cvsegments(nrow(pig),10) 
+for (k in 1:10) {
+   mod = glmnet(x[-segments[[k]],],y[-segments[[k]]],alpha=1,lambda=exp(loglambda))
+   cvpred[segments[[k]],] = predict(mod,newx=x[segments[[k]],]) 
+}
+
+cvmod = cv.glmnet(x,y,alpha=1,lambda=exp(loglambda))
+
+```"

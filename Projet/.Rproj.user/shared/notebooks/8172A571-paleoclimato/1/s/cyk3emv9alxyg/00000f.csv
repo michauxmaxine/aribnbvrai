@@ -1,0 +1,2 @@
+"0","library(FactoMineR)"
+"0","res.pca <- PCA(paleo[1:700,1:41], quanti.sup=32:40, quali.sup=41)"
